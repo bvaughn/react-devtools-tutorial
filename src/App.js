@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, Location } from "@reach/router";
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from "@reach/router";
 import DevTools from './DevTools';
 import FakeBrowserWindow from './FakeBrowserWindow';
-import ROUTES from './routes';
+import { usePrevAndNextRoutes } from './hooks';
  
 import './App.css';
 
@@ -11,6 +11,11 @@ function loadBabel(iframe, scriptSource) {
     .then(response => response.text())
     .then(input => {
     const { contentDocument } = iframe;
+
+    if (contentDocument == null) {
+      // We unmounted in the middle of the sequence.
+      return;
+    }
 
     // eslint-disable-next-line no-undef
     const { code } = Babel.transform(input, { presets: ['es2015', 'react'] });
@@ -32,22 +37,21 @@ function loadScript(iframe, scriptSource, onLoadFn) {
   contentDocument.head.appendChild(script);
 }
 
-function BackAndNextButtons({ pathname }) {
-  const routesArray = useMemo(() => Object.keys(ROUTES), []);
-  const routeIndex = useMemo(() => routesArray.indexOf(pathname), [pathname, routesArray]);
+function BackAndNextButtons() {
+  const { nextLink, prevLink } = usePrevAndNextRoutes();
 
-  if (pathname === '/') {
+  if (nextLink === null && prevLink === null) {
     return null;
   }
 
   return (
     <div className="LeftMiddle">
-      {routeIndex > 0 ? (
-        <Link className="LeftMiddleLink" to={routesArray[routeIndex - 1]}>« Prev</Link>
+      {prevLink !== null ? (
+        <Link className="LeftMiddleLink" to={prevLink}>« Prev</Link>
       ) : <span>« Prev</span>}
       <Link className="LeftMiddleLink" to="/">Home</Link>
-      {routeIndex < routesArray.length - 1 ? (
-        <Link className="LeftMiddleLink" to={routesArray[routeIndex + 1]}>Next »</Link>
+      {nextLink !== null ? (
+        <Link className="LeftMiddleLink" to={nextLink}>Next »</Link>
       ) : <span>Next »</span>}
     </div>
   );
@@ -80,9 +84,7 @@ export default function App({
         <div className="LeftTop">
           <h1 className="LeftTopHeader">{title}</h1>
         </div>
-        <Location>
-          {({ location }) => <BackAndNextButtons pathname={location.pathname} />}
-        </Location>
+        <BackAndNextButtons />
         <div className="LeftBottom">
           {children}
         </div>

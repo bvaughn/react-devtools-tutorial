@@ -8,7 +8,8 @@
     "react-devtools-inline": "^4.0.0-alpha.8",
     "react-dom": "^0.0.0-375616788",
     "react-scripts": "3.0.1",
-    "scheduler": "^0.0.0-375616788"
+    "scheduler": "^0.0.0-375616788",
+    "use-subscription": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

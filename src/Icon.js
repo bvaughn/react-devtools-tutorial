@@ -17,11 +17,17 @@ export default function Icon({ className = '', type }) {
     case 'export':
       pathData = PATH_EXPORT;
       break;
+    case 'left':
+      pathData = PATH_LEFT;
+      break;
     case 'import':
       pathData = PATH_IMPORT;
       break;
     case 'record':
       pathData = PATH_RECORD;
+      break;
+    case 'right':
+      pathData = PATH_RIGHT;
       break;
     case 'selector':
       pathData = PATH_SELECTOR;
@@ -65,9 +71,13 @@ const PATH_CLEAR = `
 
 const PATH_EXPORT = 'M15.82,2.14v7H21l-9,9L3,9.18H8.18v-7ZM3,20.13H21v1.73H3Z';
 
+const PATH_LEFT = 'M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z';
+
 const PATH_IMPORT = 'M8.18,18.13v-7H3l9-8.95,9,9H15.82v7ZM3,20.13H21v1.73H3Z';
 
 const PATH_RECORD = 'M4,12a8,8 0 1,0 16,0a8,8 0 1,0 -16,0';
+
+const PATH_RIGHT = 'M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z';
 
 const PATH_SELECTOR = 'M8.5,22H3.7l-1.4-1.5V3.8l1.3-1.5h17.2l1,1.5v4.9h-1.3V4.3l-0.4-0.6H4.2L3.6,4.3V20l0.7,0.7h4.2V22z M23,13.9l-4.6,3.6l4.6,4.6l-1.1,1.1l-4.7-4.4l-3.3,4.4l-3.2-12.3L23,13.9z';
 
