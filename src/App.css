@@ -3,17 +3,20 @@
   flex-direction: row;
   justify-content: center;
   height: 100vh;
-
-  background-color: var(--color-background);
+  padding: 0.5rem;
+  background-color: var(--color-dimmer);
   font-family: var(--font-family-sans);
   font-size: var(--comfortable-font-size-sans-normal);
 }
 
 .Left {
   flex: 1 0 250px;
-  border-right: 1px solid var(--color-border);
   color: var(--color-text);
   overflow: auto;
+  background-color: var(--color-background);
+
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
 
   line-height: 1.5;
   font-weight: lighter;
