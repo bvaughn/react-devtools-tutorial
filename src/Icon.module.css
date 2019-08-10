@@ -2,4 +2,5 @@
   height: 18px;
   width: 18px;
   vertical-align: text-top;
+  color: var(--color-button);
 }
