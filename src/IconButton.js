@@ -9,15 +9,19 @@ export default function IconButton({
   className = '',
   isDisabled = false,
   onClick,
-  type
+  type,
 }) {
   const classNames = [
     className,
-    isDisabled ? styles.ButtonDisabled : styles.Button
+    isDisabled ? styles.ButtonDisabled : styles.Button,
   ];
 
   return (
-    <button className={classNames.join(' ')} disabled={isDisabled} onClick={onClick}>
+    <button
+      className={classNames.join(' ')}
+      disabled={isDisabled}
+      onClick={onClick}
+    >
       <Icon className={styles.Icon} type={type} />
     </button>
   );

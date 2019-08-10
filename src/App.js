@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from "@reach/router";
+import { Link } from '@reach/router';
 import FakeBrowserWindow from './FakeBrowserWindow';
 import { usePrevAndNextRoutes } from './hooks';
- 
+
 import styles from './App.module.css';
 
 export default function App({ children, defaultTabID, iframeSource, title }) {
@@ -17,20 +17,32 @@ export default function App({ children, defaultTabID, iframeSource, title }) {
         {(nextLink !== null || prevLink !== null) && (
           <div className={styles.LeftMiddle}>
             {prevLink !== null ? (
-              <Link className={styles.LeftMiddleLink} to={prevLink}>« Prev</Link>
-            ) : <span>« Prev</span>}
-            <Link className={styles.LeftMiddleLink} to="/">Home</Link>
+              <Link className={styles.LeftMiddleLink} to={prevLink}>
+                « Prev
+              </Link>
+            ) : (
+              <span>« Prev</span>
+            )}
+            <Link className={styles.LeftMiddleLink} to="/">
+              Home
+            </Link>
             {nextLink !== null ? (
-              <Link className={styles.LeftMiddleLink} to={nextLink}>Next »</Link>
-            ) : <span>Next »</span>}
+              <Link className={styles.LeftMiddleLink} to={nextLink}>
+                Next »
+              </Link>
+            ) : (
+              <span>Next »</span>
+            )}
           </div>
         )}
-        <div className={styles.LeftBottom}>
-          {children}
-        </div>
+        <div className={styles.LeftBottom}>{children}</div>
       </div>
       <div className={styles.Right}>
-        <FakeBrowserWindow defaultTabID={defaultTabID} iframeSource={iframeSource} title={title} />
+        <FakeBrowserWindow
+          defaultTabID={defaultTabID}
+          iframeSource={iframeSource}
+          title={title}
+        />
       </div>
     </div>
   );

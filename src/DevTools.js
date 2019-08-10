@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import {
   activate as activateBackend,
-  initialize as initializeBackend
+  initialize as initializeBackend,
 } from 'react-devtools-inline/backend';
 import { initialize as initializeFrontend } from 'react-devtools-inline/frontend';
 

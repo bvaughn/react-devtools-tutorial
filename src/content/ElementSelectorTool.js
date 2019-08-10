@@ -6,16 +6,15 @@ export default function Content() {
   return (
     <App title={Content.title}>
       <p>
-        To the right is an example TODO List.
-        To add a new item to the list, enter some text and click the <Icon type="add" /> button.
+        To the right is an example TODO List. To add a new item to the list,
+        enter some text and click the <Icon type="add" /> button.
       </p>
       <p>
-        Using React DevTools, can you identify which component rendered the <Icon type="add" /> button?
+        Using React DevTools, can you identify which component rendered the{' '}
+        <Icon type="add" /> button?
       </p>
       <details>
-        <summary>
-          Show me how.
-        </summary>
+        <summary>Show me how.</summary>
         <ol>
           <li>
             Click the selector button <Icon type="selector" /> in DevTools.

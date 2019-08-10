@@ -20,7 +20,8 @@ function withCurrentDate(Component) {
     }, []);
     return <Component date={date} />;
   }
-  WithCurrentDate.displayName = `withCurrentDate(${Component.displayName || Component.name})`;
+  WithCurrentDate.displayName = `withCurrentDate(${Component.displayName ||
+    Component.name})`;
   return WithCurrentDate;
 }
 

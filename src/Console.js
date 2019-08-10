@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
- 
+
 import styles from './Console.module.css';
 
 function argsToText(args) {
@@ -16,7 +16,7 @@ function argsToText(args) {
   }
 
   while (args.length > 0) {
-    text += ' ' + args.shift();    
+    text += ' ' + args.shift();
   }
 
   return text;
@@ -28,10 +28,26 @@ export default function Console({ hidden, iframeRef }) {
 
   useLayoutEffect(() => {
     const { contentWindow } = iframeRef.current;
-    contentWindow.console.error = (...args) => setEntries(entries => [...entries, {type: 'Error', text: argsToText(args)}]);
-    contentWindow.console.info = (...args) => setEntries(entries => [...entries, {type: 'Info', text: argsToText(args)}]);
-    contentWindow.console.log = (...args) => setEntries(entries => [...entries, {type: 'Log', text: argsToText(args)}]);
-    contentWindow.console.warn = (...args) => setEntries(entries => [...entries, {type: 'Warn', text: argsToText(args)}]);
+    contentWindow.console.error = (...args) =>
+      setEntries(entries => [
+        ...entries,
+        { type: 'Error', text: argsToText(args) },
+      ]);
+    contentWindow.console.info = (...args) =>
+      setEntries(entries => [
+        ...entries,
+        { type: 'Info', text: argsToText(args) },
+      ]);
+    contentWindow.console.log = (...args) =>
+      setEntries(entries => [
+        ...entries,
+        { type: 'Log', text: argsToText(args) },
+      ]);
+    contentWindow.console.warn = (...args) =>
+      setEntries(entries => [
+        ...entries,
+        { type: 'Warn', text: argsToText(args) },
+      ]);
   }, [iframeRef]);
 
   const handleKeyDown = event => {
@@ -47,17 +63,31 @@ export default function Console({ hidden, iframeRef }) {
       try {
         contentWindow.eval(text);
       } catch (error) {
-        setEntries(entries => [...entries, {type: 'Error', text: error.message}]);
+        setEntries(entries => [
+          ...entries,
+          { type: 'Error', text: error.message },
+        ]);
       }
     }
-  }
+  };
 
   return (
-    <div className={styles.Console} hidden={hidden} onClick={() => inputRef.current.focus()}>
+    <div
+      className={styles.Console}
+      hidden={hidden}
+      onClick={() => inputRef.current.focus()}
+    >
       {entries.map((entry, index) => (
-        <div className={entry.type} key={index}>{entry.text}</div>
+        <div className={entry.type} key={index}>
+          {entry.text}
+        </div>
       ))}
-      <div ref={inputRef} className={styles.Input} contentEditable onKeyDown={handleKeyDown} />
+      <div
+        ref={inputRef}
+        className={styles.Input}
+        contentEditable
+        onKeyDown={handleKeyDown}
+      />
     </div>
   );
 }

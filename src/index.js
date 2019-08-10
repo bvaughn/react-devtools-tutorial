@@ -2,8 +2,8 @@
 import './setupDevToolsBackend';
 
 import React from 'react';
-import { unstable_createSyncRoot as createSyncRoot } from "react-dom";
-import { Router } from "@reach/router";
+import { unstable_createSyncRoot as createSyncRoot } from 'react-dom';
+import { Router } from '@reach/router';
 import Home from './content/Home';
 import ROUTES from './routes';
 

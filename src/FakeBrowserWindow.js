@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import IconButton from './IconButton';
 import { usePrevAndNextRoutes } from './hooks';
-import { navigate } from "@reach/router"
+import { navigate } from '@reach/router';
 import DevTools from './DevTools';
 
 import styles from './FakeBrowserWindow.module.css';
@@ -10,21 +10,21 @@ function loadBabel(iframe, scriptSource) {
   fetch(scriptSource)
     .then(response => response.text())
     .then(input => {
-    const { contentDocument } = iframe;
+      const { contentDocument } = iframe;
 
-    if (contentDocument == null) {
-      // We unmounted in the middle of the sequence.
-      return;
-    }
+      if (contentDocument == null) {
+        // We unmounted in the middle of the sequence.
+        return;
+      }
 
-    // eslint-disable-next-line no-undef
-    const { code } = Babel.transform(input, { presets: ['es2015', 'react'] });
+      // eslint-disable-next-line no-undef
+      const { code } = Babel.transform(input, { presets: ['es2015', 'react'] });
 
-    const script = contentDocument.createElement('script');
-    script.textContent = code;
+      const script = contentDocument.createElement('script');
+      script.textContent = code;
 
-    contentDocument.head.appendChild(script);
-  });
+      contentDocument.head.appendChild(script);
+    });
 }
 
 function loadScript(iframe, scriptSource, onLoadFn) {
@@ -40,7 +40,7 @@ function loadScript(iframe, scriptSource, onLoadFn) {
 export default function FakeBrowserWindow({
   defaultTabID = 'components',
   iframeSource = 'example-todo-list-app.js',
-  title
+  title,
 }) {
   const iframeRef = useRef(null);
   const [tabID, setTabID] = useState(defaultTabID);
@@ -52,9 +52,16 @@ export default function FakeBrowserWindow({
       const iframe = iframeRef.current;
       iframe.addEventListener('load', () => {
         // Load React, ReactDOM, and example app after hook has been installed.
-        loadScript(iframe, 'https://unpkg.com/react@0.0.0-a1dbb852c/umd/react.development.js',
-          () => loadScript(iframe, 'https://unpkg.com/react-dom@0.0.0-a1dbb852c/umd/react-dom.development.js',
-            () => loadBabel(iframe, iframeSource)));
+        loadScript(
+          iframe,
+          'https://unpkg.com/react@0.0.0-a1dbb852c/umd/react.development.js',
+          () =>
+            loadScript(
+              iframe,
+              'https://unpkg.com/react-dom@0.0.0-a1dbb852c/umd/react-dom.development.js',
+              () => loadBabel(iframe, iframeSource)
+            )
+        );
       });
     }
   }, [iframeSource]);
@@ -94,21 +101,33 @@ export default function FakeBrowserWindow({
             ref={iframeRef}
             className={styles.Frame}
             title="Demo app"
-            src="/empty.html">
-          </iframe>
+            src="/empty.html"
+          ></iframe>
           <div className={styles.TabBar}>
             <div
               className={tabID === 'components' ? styles.TabActive : styles.Tab}
               onClick={() => setTabID('components')}
             >
-              <span className={styles.ReactIcon} role="img" aria-label="React Components tab button">⚛️</span>
+              <span
+                className={styles.ReactIcon}
+                role="img"
+                aria-label="React Components tab button"
+              >
+                ⚛️
+              </span>
               Components
             </div>
             <div
               className={tabID === 'profiler' ? styles.TabActive : styles.Tab}
               onClick={() => setTabID('profiler')}
             >
-              <span className={styles.ReactIcon} role="img" aria-label="React Profiler tab button">⚛️</span>
+              <span
+                className={styles.ReactIcon}
+                role="img"
+                aria-label="React Profiler tab button"
+              >
+                ⚛️
+              </span>
               Profiler
             </div>
           </div>

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "prettier": "^1.18.2",
     "react": "^0.0.0-375616788",
     "react-devtools-inline": "^4.0.0-alpha.8",
     "react-dom": "^0.0.0-375616788",
@@ -16,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "now --target production"
+    "deploy": "now --target production",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write '{public,src}/**/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
