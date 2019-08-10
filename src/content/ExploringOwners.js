@@ -36,7 +36,7 @@ export default function Content() {
         </ol>
       </details>
       <p>
-        Sometimes it can useful to see the list of things rendered by a particular component- (the things it "owns").
+        Sometimes it can be useful to see the list of things rendered by a particular component- (the things it "owns").
         This can be a helpful way to explore large, unfamiliar React applications.
       </p>
       <p>
