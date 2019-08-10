@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
  
-import './Console.css';
+import styles from './Console.module.css';
 
 function argsToText(args) {
   if (args.length === 0) {
@@ -53,11 +53,11 @@ export default function Console({ hidden, iframeRef }) {
   }
 
   return (
-    <div className="Console" hidden={hidden} onClick={() => inputRef.current.focus()}>
+    <div className={styles.Console} hidden={hidden} onClick={() => inputRef.current.focus()}>
       {entries.map((entry, index) => (
         <div className={entry.type} key={index}>{entry.text}</div>
       ))}
-      <div ref={inputRef} className="Input" contentEditable onKeyDown={handleKeyDown} />
+      <div ref={inputRef} className={styles.Input} contentEditable onKeyDown={handleKeyDown} />
     </div>
   );
 }

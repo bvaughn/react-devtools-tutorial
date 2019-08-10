@@ -28,7 +28,9 @@
   flex: 0 0 auto;
 }
 
-.BrowserColumn {
+.BrowserColumnLeft,
+.BrowserColumnMiddle,
+.BrowserColumnRight {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -115,5 +117,18 @@
 
 .Tab:hover,
 .TabActive:hover {
-  background-color: #eee;
+  background-color: rgba(0,0,0,.05);
+}
+
+.Frame {
+  width: 100%;
+  flex: 1 1 200px;
+  border: 0;
+}
+
+.DevTools {
+  width: 100%;
+  flex: 1 1 300px;
+  height: 100%;
+  overflow: auto;
 }

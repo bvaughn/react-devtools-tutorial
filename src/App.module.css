@@ -101,19 +101,6 @@
   overflow: hidden;
 }
 
-.Frame {
-  width: 100%;
-  flex: 1 1 200px;
-  border: 0;
-}
-
 .ReactIcon {
   margin-right: 0.25rem;
-}
-
-.DevTools {
-  width: 100%;
-  flex: 1 1 300px;
-  height: 100%;
-  overflow: auto;
 }

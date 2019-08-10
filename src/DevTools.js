@@ -4,8 +4,6 @@ import {
   initialize as initializeBackend
 } from 'react-devtools-inline/backend';
 import { initialize as initializeFrontend } from 'react-devtools-inline/frontend';
- 
-import './DevTools.css';
 
 export default function DevTools({ iframeRef, tabID }) {
   const [DevTools, setDevTools] = useState(null);
