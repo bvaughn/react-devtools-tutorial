@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import styles from './Icon.module.css';
+
 export default function Icon({ className = '', type }) {
   let pathData = null;
   switch (type) {
@@ -49,9 +51,7 @@ export default function Icon({ className = '', type }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      width="13"
-      height="13"
+      className={[styles.Icon, className].join(' ')}
       viewBox="0 0 24 24"
     >
       <path d="M0 0h24v24H0z" fill="none" />
