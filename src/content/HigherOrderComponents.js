@@ -16,7 +16,7 @@ export default function Content() {
         DevTools. The Components tree formats these HOC names as a special badge
         to the right of the component name.
       </p>
-      <p>Can you spot the HOC used in the example app to the right?</p>
+      <p>Can you spot the HOC used in the example app?</p>
       <details>
         <summary>Show me.</summary>
         <ol>

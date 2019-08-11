@@ -9,6 +9,12 @@
   font-size: var(--comfortable-font-size-sans-normal);
 }
 
+@media (max-width: 800px) {
+  .App {
+    flex-direction: column;
+  }
+}
+
 .Left {
   flex: 1 0 250px;
   color: var(--color-text);
@@ -16,7 +22,6 @@
   background-color: var(--color-background);
 
   border-radius: 0.25rem;
-  margin-right: 0.5rem;
 
   line-height: 1.5;
   font-weight: lighter;
@@ -93,12 +98,16 @@
   list-style: none;
 }
 
+.Spacer {
+  flex: 0 0 0.5rem;
+}
+
 .Right {
   flex: 2 1 500px;
   border-left: none;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .ReactIcon {

@@ -37,6 +37,7 @@ export default function App({ children, defaultTabID, iframeSource, title }) {
         )}
         <div className={styles.LeftBottom}>{children}</div>
       </div>
+      <div className={styles.Spacer} />
       <div className={styles.Right}>
         <FakeBrowserWindow
           defaultTabID={defaultTabID}

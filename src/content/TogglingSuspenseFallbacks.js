@@ -15,8 +15,8 @@ export default function Content() {
         states when components deeper in the tree are waiting to render.
       </p>
       <p>
-        There are a couple of suspense boundaries in the example app to the
-        right. Let's test the loading state for the entire email app.
+        There are a couple of suspense boundaries in the nearby example app.
+        Let's test the loading state for the entire email app.
       </p>
       <details>
         <summary>Show me how.</summary>

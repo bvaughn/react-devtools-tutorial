@@ -89,6 +89,7 @@
 .BrowserContent {
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .TabBar {
@@ -122,13 +123,19 @@
 
 .Frame {
   width: 100%;
-  flex: 1 1 200px;
+  flex: 1 0 150px;
   border: 0;
 }
 
 .DevTools {
   width: 100%;
-  flex: 1 1 300px;
+  flex: 1 0 200px;
   height: 100%;
   overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .DevTools {
+    min-height: 400px;
+  }
 }

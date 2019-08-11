@@ -7,8 +7,8 @@ export default function Content() {
   return (
     <App title="React DevTools">
       <p>
-        The right hand panel contains a fake web browser with the React DevTools
-        extension connected to a small React app.
+        This page contains a fake web browser with the React DevTools extension
+        connected to a small React app.
       </p>
       <p>
         Below is a series of exercises that use the example app to demonstrate

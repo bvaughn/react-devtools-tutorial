@@ -6,7 +6,7 @@ export default function Content() {
   return (
     <App title={Content.title}>
       <p>
-        To the right is an example TODO List. To add a new item to the list,
+        Beside of this is an example TODO List. To add a new item to the list,
         enter some text and click the <Icon type="add" /> button.
       </p>
       <p>
