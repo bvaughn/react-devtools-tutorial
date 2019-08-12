@@ -19,8 +19,10 @@ export default function DevTools({ iframeRef, tabID }) {
 
     initializeBackend(contentWindow);
 
-    // Reset preferences between tutorial steps.
+    // Reset preferences and history between tutorial steps,
+    // so the tutorial can start from a known state and avoid edge cases.
     localStorage.removeItem('React::DevTools::componentFilters');
+    localStorage.removeItem('React::DevTools::selectedSettingsTabID');
 
     // This returns a React component that can be rendered into your app.
     // <DevTools {...props} />

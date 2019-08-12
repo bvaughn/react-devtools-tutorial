@@ -1,6 +1,9 @@
 import React from 'react';
 import App from '../App';
 import Icon from '../Icon';
+import Guide from '../Guide';
+
+const targetIDs = ['hostNodeSelectorToggle'];
 
 export default function Content() {
   return (
@@ -13,8 +16,7 @@ export default function Content() {
         Using React DevTools, can you identify which component rendered the{' '}
         <Icon type="add" /> button?
       </p>
-      <details>
-        <summary>Show me how.</summary>
+      <Guide targetIDs={targetIDs}>
         <ol>
           <li>
             Click the selector button <Icon type="selector" /> in DevTools.
@@ -26,7 +28,7 @@ export default function Content() {
             The <code>AddItem</code> component should now be selected.
           </li>
         </ol>
-      </details>
+      </Guide>
     </App>
   );
 }

@@ -1,5 +1,10 @@
 import React from 'react';
 import App from '../App';
+import Guide from '../Guide';
+
+const firstTargetIDs = [
+  'element-name-ListItem:2'
+];
 
 export default function Content() {
   return (
@@ -12,8 +17,7 @@ export default function Content() {
         Let's complete the third item on our todo list (laundry). We could just
         click the item to do this, but let's do it with DevTools.
       </p>
-      <details>
-        <summary>Show me how.</summary>
+      <Guide targetIDs={firstTargetIDs}>
         <ol>
           <li>
             Select the third <code>ListItem</code> in the Components tree.
@@ -26,7 +30,7 @@ export default function Content() {
           </li>
           <li>The item should now be checked in the example app above.</li>
         </ol>
-      </details>
+      </Guide>
       <p>Let's change the entry text too.</p>
       <details>
         <summary>Show me how.</summary>

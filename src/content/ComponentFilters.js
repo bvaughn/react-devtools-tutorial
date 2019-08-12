@@ -1,6 +1,22 @@
 import React from 'react';
 import App from '../App';
 import Icon from '../Icon';
+import Guide from '../Guide';
+
+const firstTargetIDs = [
+  'openSettingsDialogButton',
+  'componentsTab',
+  'componentFilterToggle',
+  'closeSettingsDialogButton',
+];
+
+const secondTargetIDs = [
+  'openSettingsDialogButton',
+  'addComponentFilterButton',
+  'componentFilterTypeSelect:1',
+  'componentFilterTextInput',
+  'closeSettingsDialogButton',
+]
 
 export default function Content() {
   return (
@@ -15,8 +31,7 @@ export default function Content() {
         hidden by default. Let's turn this filter off to see which host
         components are used in our app.
       </p>
-      <details>
-        <summary>Show me how.</summary>
+      <Guide targetIDs={firstTargetIDs}>
         <ol>
           <li>
             Click the settings button <Icon type="settings" /> in DevTools.
@@ -33,14 +48,13 @@ export default function Content() {
             <code>&lt;ul&gt;</code>, etc.)
           </li>
         </ol>
-      </details>
+      </Guide>
       <p>
         Next let's try using component filters to hide both the{' '}
         <code>List</code> and <code>ListItem</code> components without hiding
         the <code>App</code> or <code>AddItem</code> components.
       </p>
-      <details>
-        <summary>Show me how.</summary>
+      <Guide targetIDs={secondTargetIDs}>
         <ol>
           <li>
             Re-open the Components settings <Icon type="settings" /> in
@@ -60,7 +74,7 @@ export default function Content() {
             <code>&lt;li&gt;</code> they render should be visible.
           </li>
         </ol>
-      </details>
+      </Guide>
     </App>
   );
 }
