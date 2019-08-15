@@ -7892,6 +7892,11 @@ react-app-polyfill@^1.0.1:
     regenerator-runtime "0.13.2"
     whatwg-fetch "3.0.0"
 
+react-debug-tools@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-debug-tools/-/react-debug-tools-0.1.0.tgz#a5b71d09739f56a504a98148266909544025f1ab"
+  integrity sha512-S56IoEvdxyiPxXW7SXP/k3Q50Fidv0g8uhW+rfw7SHt92pPq1rb0nPtHhmcTW9i+azAfzW46duMKkgV/gtXQ0Q==
+
 react-dev-utils@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.0.1.tgz#5c03d85a0b2537d0c46af7165c24a7dfb274bef2"
@@ -7923,10 +7928,10 @@ react-dev-utils@^9.0.1:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-devtools-inline@^4.0.0-alpha.8:
-  version "4.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/react-devtools-inline/-/react-devtools-inline-4.0.0-alpha.8.tgz#1ced48c3725671a10379742f3549db35cd38dc5f"
-  integrity sha512-AT6zCXCxAY7grRGgXetnbVjd4ldfZ6ABloxEJLhT6s05uWkb2sMc9Tny7aCzc7UCo5htjLaqxxI2XF91zomBdQ==
+react-devtools-inline@^4.0.0-alpha.10:
+  version "4.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/react-devtools-inline/-/react-devtools-inline-4.0.0-alpha.10.tgz#af76d94f74696ab8b9a8b2acea49302bc6d1d2a6"
+  integrity sha512-g0CkX9lDLNPujmDSkTV41HrLHP31Kl+GCWgBetw1uAznV94XRLJMxgIi+295VEdsOvLQeLx/FfQi+twf+tSv7Q==
 
 react-dom@^0.0.0-375616788:
   version "0.0.0-375616788"
