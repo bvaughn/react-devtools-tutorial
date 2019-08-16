@@ -49,14 +49,14 @@ export default function Content() {
             Double click <code>App</code> in the tree.
           </li>
           <li>
-            The tree now contains only the elements that wered rendered by{' '}
+            The tree now contains only the elements that were rendered by{' '}
             <code>App</code>.
           </li>
           <li>
             Double click on the <code>Header</code> element to zoom in further.
           </li>
           <li>
-            The tree now contains only the elements that wered rendered by{' '}
+            The tree now contains only the elements that were rendered by{' '}
             <code>Header</code>.
           </li>
           <li>
