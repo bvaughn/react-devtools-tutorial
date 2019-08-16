@@ -7928,10 +7928,10 @@ react-dev-utils@^9.0.1:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-devtools-inline@^4.0.0-alpha.10:
-  version "4.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/react-devtools-inline/-/react-devtools-inline-4.0.0-alpha.10.tgz#af76d94f74696ab8b9a8b2acea49302bc6d1d2a6"
-  integrity sha512-g0CkX9lDLNPujmDSkTV41HrLHP31Kl+GCWgBetw1uAznV94XRLJMxgIi+295VEdsOvLQeLx/FfQi+twf+tSv7Q==
+react-devtools-inline@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-devtools-inline/-/react-devtools-inline-4.0.0.tgz#f77f22d232bac62af5fd901a24a162c92fb0720f"
+  integrity sha512-IW2ZGy96sK8J2tmm+1huPYgNvEaoodAUGBK2vTQXgLC5AzaBxf2jl8VtdMU8+bPQsxtU+BVcAIJFgN3lsunxOQ==
 
 react-dom@^0.0.0-375616788:
   version "0.0.0-375616788"

@@ -7,7 +7,7 @@
     "prettier": "^1.18.2",
     "react": "^0.0.0-375616788",
     "react-debug-tools": "^0.1.0",
-    "react-devtools-inline": "^4.0.0-alpha.10",
+    "react-devtools-inline": "^4.0.0",
     "react-dom": "^0.0.0-375616788",
     "react-scripts": "3.0.1",
     "scheduler": "^0.0.0-375616788",
