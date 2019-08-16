@@ -15,7 +15,9 @@ function App() {
 
   const toggleItem = useCallback(
     itemToToggle => {
-      const index = items.indexOf(itemToToggle);
+      // Dont use indexOf()
+      // because editing props in DevTools creates a new Object.
+      const index = items.findIndex(item => item.id === itemToToggle.id);
 
       setItems(
         items
