@@ -89,6 +89,7 @@
 .BrowserContent {
   display: flex;
   flex-direction: column;
+  flex: 1 0 100%;
   overflow: auto;
 }
 
@@ -123,7 +124,7 @@
 
 .Frame {
   width: 100%;
-  flex: 1 0 150px;
+  flex: 0 0 150px;
   border: 0;
 }
 
