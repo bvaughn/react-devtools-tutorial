@@ -22,7 +22,7 @@ export default function Content() {
         <ol>
           <li>
             The <code>ShowTheTime</code> component rendered by <code>App</code>{' '}
-            is an HOC (<code>withCurrentDate</code>)
+            is a HOC (<code>withCurrentDate</code>)
           </li>
         </ol>
       </details>
