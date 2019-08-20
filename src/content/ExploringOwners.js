@@ -6,7 +6,7 @@ export default function Content() {
   return (
     <App title={Content.title}>
       <p>
-        In React, an element's "owner" refers the thing that rendered it.
+        In React, an element's "owner" refers to the thing that rendered it.
         Sometimes an element's parent is also its owner, but usually they're
         different. This distinction is important because props come from owners.
       </p>
